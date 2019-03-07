@@ -1,7 +1,7 @@
 import { authReducer } from './auth'
 import { tasksReducer } from './tasks'
 import { connectRouter } from 'connected-react-router/immutable'
-import { combineReducers } from 'redux-immutable'
+import { combineReducers } from 'redux'
 
 export default history =>
   combineReducers({

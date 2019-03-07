@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
-import { authActions, getAuth } from '../../auth'
+import { authActions, getAuth } from 'src/auth'
 import Header from '../header'
 import RequireAuthRoute from '../require-auth-route'
 import RequireUnauthRoute from '../require-unauth-route'
-import SignInPage from '../../pages/sign-in'
-import TasksPage from '../../pages/tasks'
+import SignInPage from 'src/pages/sign-in'
+import TasksPage from 'src/pages/tasks'
 
 const App = ({ authenticated, signOut }) => (
   <div>
