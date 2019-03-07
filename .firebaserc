@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "todosaga": "todo-saga-redux",
+    "default": "todo-saga-redux"
+  }
+}

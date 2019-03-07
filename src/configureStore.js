@@ -1,4 +1,4 @@
-import { applyMiddleware, compose, createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import { routerMiddleware } from 'connected-react-router/immutable'
 import createSagaMiddleware from 'redux-saga'
 import { history } from './history'
@@ -11,12 +11,10 @@ export default function configureStore(initialState) {
   let middleware = applyMiddleware(sagaMiddleware, routerMiddleware(history))
 
   if (process.env.NODE_ENV !== 'production') {
-    const devToolsExtension = window.devToolsExtension
-    if (typeof devToolsExtension === 'function') {
-      middleware = compose(
-        middleware,
-        devToolsExtension()
-      )
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+
+    if (composeEnhancers) {
+      middleware = composeEnhancers(middleware)
     }
   }
 
