@@ -9,7 +9,7 @@ import './task-item.scss'
 export class TaskItem extends Component {
   state = { editing: false }
 
-  edit() {
+  edit = () => {
     this.setState({ editing: true })
   }
 
