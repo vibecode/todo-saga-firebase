@@ -20,7 +20,7 @@ const Header = ({ authenticated, signOut }) => (
           <li>
             <a
               className="link link--github"
-              href="https://github.com/r-park/todo-redux-saga"
+              href="https://github.com/vibecode/todo-saga-firebase"
             >
               <GitHubLogo />
             </a>
