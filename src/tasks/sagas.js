@@ -69,9 +69,12 @@ function* watchCreateTask() {
 
 function* watchLocationChange() {
   while (true) {
-    let { payload } = yield take(LOCATION_CHANGE)
-    if (payload.pathname === '/') {
-      const params = new URLSearchParams(payload.search)
+    let {
+      payload: { location }
+    } = yield take(LOCATION_CHANGE)
+
+    if (location.pathname === '/') {
+      const params = new URLSearchParams(location.search)
       const filter = params.get('filter')
       yield put(taskActions.filterTasks(filter))
     }

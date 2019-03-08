@@ -21,7 +21,6 @@ const TasksPage = ({ createTask, location, removeTask, tasks, updateTask }) => {
       <div className="g-col">
         <TaskFilters filter={filter} />
         <TaskList
-          filter={filter}
           removeTask={removeTask}
           tasks={tasks}
           updateTask={updateTask}
